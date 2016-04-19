@@ -323,7 +323,21 @@ jQuery(document).ready(function(){
 	jQuery("<p>- </p>").prependTo("option.second-level");
 
 	jQuery('#main-menu li.menu-item-has-children').append("<i class='fa fa-caret-down'></i>");
-
+	
+	
+	/** User reviews comments **/
+	
+	jQuery(".comment_meta_slider").each(function() {
+        var comm_meta_input = jQuery(this).parent(".comment-form-meta-option").children("input");
+        jQuery(this).slider({
+            min: 0,
+            max: 100,
+            value: 4,
+            slide: function(event, ui) {
+                jQuery(comm_meta_input).val(ui.value / 10);
+            }
+        });
+    });
 
 
 });
