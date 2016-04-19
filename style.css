@@ -1225,7 +1225,9 @@ nav#pagination ul li.active a, nav#pagination ul li span.current {
   border-left: 1px solid #ededed;
 }
 
-
+#main-sidebar li {
+	float:none;
+}
 
 /* Default list item styling */
 
