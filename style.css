@@ -4,7 +4,7 @@ Theme URI: https://themeisle.com/themes/bookrev-lite/
 Author: Themeisle
 Author URI: https://themeisle.com
 Description: Book Rev Lite is a free book review WordPress Theme. The responsive, clean and modern design includes tools for presenting your books/products in a beautiful way, you can easily add adsense ads, google fonts, custom colors, slider support and the pro version has also ecommerce ( Woocommerce ) integration.Works great for product review and amazon affiliate sites.
-Version: 1.6.8
+Version: 1.6.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  brown,custom-menu, featured-images, one-column, post-formats, responsive-layout, sticky-post, translation-ready,green,white,light,right-sidebar,two-columns, custom-background,custom-header,full-width-template,theme-options
@@ -1225,7 +1225,9 @@ nav#pagination ul li.active a, nav#pagination ul li span.current {
   border-left: 1px solid #ededed;
 }
 
-
+#main-sidebar li {
+	float:none;
+}
 
 /* Default list item styling */
 
@@ -2802,3 +2804,82 @@ img.aligncenter {
 
 .screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; color: #000; background: #fff; width: 1px; height: 1px; }
 .screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; outline: 1px solid; width: auto; height: auto; }
+
+/* User reviews comments */
+
+#cwp-slider-comment .comment-form-default label { }
+
+#cwp-slider-comment .comment-form-meta-option {  width: 100%; float: right; margin-bottom: 12px;position:relative; }
+
+#cwp-slider-comment .comment-form-meta-option label { float: left; width: 80%; display:block;font-size:14px;line-height: 2;padding:0px;margin:0px;}
+
+#cwp-slider-comment .comment-form-meta-option .meta_option_input { float: right; width: 12%; text-align: center; border: none; padding: 5px 0px 0px 0px; font-weight: bold;line-height: 1.5;font-size:14px; height:26px;margin:0px;min-width:0%;}
+
+#cwp-slider-comment .comment-form-meta-option .comment_meta_slider { margin-top: 5px!important; background:#f3f3f3; border: none; height: 7px; box-shadow: inset 0 0 2px rgba(0,0,0,0.3); float:left;width:100%;}
+
+#cwp-slider-comment .comment-form-meta-option .comment_meta_slider .ui-slider-handle { background: #3baeda; border:none; border-radius: 50%; width: 13px; height: 13px; top: -4px; left: 5px;  }
+
+#cwp-slider-comment .comment-form-meta-option .comment_meta_slider .ui-slider-handle:hover { cursor: pointer; box-shadow: inset 0 0 4px rgba(255,255,255,0.3);}
+
+#cwp-slider-comment cite.review-info { font-style: italic !important; color:#ddd; }
+
+
+
+/* User Comment Grades Styles */
+
+.user-comments-grades { width: 200px; float: right; margin-top: 25px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; margin-left: 15px;}
+
+.user-comments-grades * { margin: 0 !important; padding: 0 !important; }
+
+.user-comments-grades .comment-meta-option-name { float: left; text-transform: uppercase; font-size: 10px; color: #7d7d7d; margin-bottom: 3px !important;}
+
+.user-comments-grades .comment-meta-option-grade { float: right; text-transform: uppercase; font-size: 10px; font-weight: bold;clear:none!important;}
+
+.user-comments-grades .comment-meta-option { margin-bottom: 10px !important; }
+
+.user-comments-grades .comment-meta-option:last-of-type { margin-bottom: 0 !important; }
+
+
+
+/* Comment Form Meta Options - GRADE BAR */
+
+.comment-meta-option .comment-meta-grade-bar { width: 100%; background: #ebedef;border-radius: 32px;height: 5px;-webkit-box-shadow: none;box-shadow: none; overflow: hidden;}
+
+.comment-meta-grade {  height: 100%; }
+
+
+
+#cwp-slider-comment {
+
+	width:230px;
+
+	
+	display:block;
+
+	margin-bottom:10px;
+	margin-top:10px;
+
+}
+
+.comment-form-meta-option {
+
+	width:100% !important;
+
+}
+
+.cwpr_clearfix{
+
+	clear:both !important;
+
+}
+
+/* Comment Form Meta Options - GRADE BAR */
+
+#cwp-slider-comment .comment-meta-option .comment-meta-grade-bar { width: 100%; background: #ebedef;border-radius: 32px;height: 5px;-webkit-box-shadow: none;box-shadow: none; overflow: hidden;}
+
+.review-wu-right ul li { list-style: none!important; }
+
+.cwp-chart-embed {
+	position:relative!important;
+	margin:10px!important;
+}
