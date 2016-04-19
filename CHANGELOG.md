@@ -1,5 +1,14 @@
 
 
+### 1.6.9 - 19/04/2016
+
+ Changes: 
+
+
+ * Fixed #39 allow reviews comments with WP Product Review
+ * Fixed #40 sidebar layout on category page
+
+
 ### 1.6.8 - 31/03/2016
 
  Changes: 
