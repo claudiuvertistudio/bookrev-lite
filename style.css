@@ -2778,7 +2778,7 @@ img.aligncenter {
 .gallery-caption, .bypostauthor {
 }
 
-.categ ul.post-categories li, .category li {
+.categ ul.post-categories li, .category section li {
   float: left;
 }
 
