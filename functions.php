@@ -862,7 +862,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_wpc_upper_footer_bg_color) ) {
 
-		echo "#main-footer .lower-footer { background:" .  $cwp_wpc_upper_footer_bg_color . "; }";
+		echo "#main-footer .lower-footer { background:" .  esc_html($cwp_wpc_upper_footer_bg_color) . "; }";
 
 	}
 
@@ -872,7 +872,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_wpc_footer_bg_color) ) {
 
-		echo "#main-footer .upper-footer { background:" .  $cwp_wpc_footer_bg_color . "; }";
+		echo "#main-footer .upper-footer { background:" .  esc_html($cwp_wpc_footer_bg_color) . "; }";
 
 	}
 
@@ -882,7 +882,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_wpc_header_bg_color) ) {
 
-		echo "#inner-header { background:" .  $cwp_wpc_header_bg_color . "; }";
+		echo "#inner-header { background:" .  esc_html($cwp_wpc_header_bg_color) . "; }";
 
 	}
 
@@ -892,7 +892,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_wpc_header_menu_bg_color) ) {
 
-		echo "#main-menu { background:" .  $cwp_wpc_header_menu_bg_color . "; }";
+		echo "#main-menu { background:" .  esc_html($cwp_wpc_header_menu_bg_color) . "; }";
 
 	}
 
@@ -906,7 +906,7 @@ function book_rev_lite_php_style() {
 
 	if( has_custom_logo() ) {
 
-		echo "#inner-header .logo { background:url('" .  $cwp_wpc_header_logo . "') no-repeat; width: " . $cwp_wpc_header_logo_width . "px !important; height: " . $cwp_wpc_header_logo_height . "px !important;}";
+		echo "#inner-header .logo { background:url('" .  esc_url($cwp_wpc_header_logo) . "') no-repeat; width: " . intval($cwp_wpc_header_logo_width) . "px !important; height: " . intval($cwp_wpc_header_logo_height) . "px !important;}";
 
 	}
 
@@ -932,7 +932,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_featured_categ_block_bg_color) ) {
 
-		echo ".featured-carousel { background:" . $cwp_featured_categ_block_bg_color . ";}";	
+		echo ".featured-carousel { background:" . esc_html($cwp_featured_categ_block_bg_color) . ";}";	
 
 	}
 
@@ -942,9 +942,9 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_la_block_bgcolor) ) {
 
-		echo "#latest-reviews-block .lrb-inner { background:" . $cwp_la_block_bgcolor . ";}";
+		echo "#latest-reviews-block .lrb-inner { background:" . esc_html($cwp_la_block_bgcolor) . ";}";
 
-		echo "#latest-reviews-block .article-display .article-text { background: " . $cwp_la_block_bgcolor . ";}";
+		echo "#latest-reviews-block .article-display .article-text { background: " . esc_html($cwp_la_block_bgcolor) . ";}";
 
 	}
 
@@ -954,7 +954,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_lab_item_bgcolor) ) {
 
-		echo "#latest-reviews-block .article-link.active, #latest-reviews-block .article-link:hover { background:" . $cwp_lab_item_bgcolor . " !important; }";
+		echo "#latest-reviews-block .article-link.active, #latest-reviews-block .article-link:hover { background:" . esc_html($cwp_lab_item_bgcolor) . " !important; }";
 
 	}
 
@@ -964,7 +964,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_hotd_block_bgcolor) ) {
 
-		echo "#highlight-day .highlight-inner { background:".$cwp_hotd_block_bgcolor.";}";
+		echo "#highlight-day .highlight-inner { background:".esc_html($cwp_hotd_block_bgcolor).";}";
 
 	}
 
@@ -974,7 +974,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_article_bgcolor) ) {
 
-		echo ".article-container article { background:".$cwp_article_bgcolor." ;}";
+		echo ".article-container article { background:".esc_html($cwp_article_bgcolor)." ;}";
 
 	}
 
@@ -984,7 +984,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_pagination_bgcolor) ) {
 
-		echo "nav#pagination { background: " . $cwp_pagination_bgcolor . " ;}";
+		echo "nav#pagination { background: " . esc_html($cwp_pagination_bgcolor) . " ;}";
 
 	}
 
@@ -994,7 +994,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_blockheader_bgcolor) ) {
 
-		echo ".article-container .newsblock > header { background:" . $cwp_blockheader_bgcolor . ";}";
+		echo ".article-container .newsblock > header { background:" . esc_html($cwp_blockheader_bgcolor) . ";}";
 
 	}
 
@@ -1004,7 +1004,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_widget_header_bgcolor) ) {
 
-		echo "#main-sidebar .widget header { background:" . $cwp_widget_header_bgcolor . ";}";	
+		echo "#main-sidebar .widget header { background:" . esc_html($cwp_widget_header_bgcolor) . ";}";	
 
 	}
 
@@ -1014,7 +1014,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_widget_header_border_bgcolor) ) {
 
-		echo "#main-sidebar .widget header { border-color:" . $cwp_widget_header_border_bgcolor . ";}";	
+		echo "#main-sidebar .widget header { border-color:" . esc_html($cwp_widget_header_border_bgcolor) . ";}";	
 
 	}
 
@@ -1024,7 +1024,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_pagination_button_color) ) {
 
-		echo "nav#pagination ul li a { background:" . $cwp_pagination_button_color . ";}";	
+		echo "nav#pagination ul li a { background:" . esc_html($cwp_pagination_button_color) . ";}";	
 
 	}
 
@@ -1034,7 +1034,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_pagination_button_color) ) {
 
-		echo "nav#pagination ul li a:hover { background:" . $cwp_pagination_button_color . ";}";	
+		echo "nav#pagination ul li a:hover { background:" . esc_html($cwp_pagination_button_color) . ";}";	
 
 	}
 
@@ -1044,7 +1044,7 @@ function book_rev_lite_php_style() {
 
 	if( !empty($cwp_pagination_button_active) ) {
 
-		echo "nav#pagination ul li.active a { background:" . $cwp_pagination_button_active . ";}";	
+		echo "nav#pagination ul li.active a { background:" . esc_html($cwp_pagination_button_active) . ";}";	
 
 	}
 
@@ -1068,7 +1068,7 @@ function book_rev_lite_php_style() {
 
 		.widget header h2
 
-		{ font-family: " . '"' .  $cwp_article_title_font. '"' . ", sans-serif !important; }
+		{ font-family: " . '"' .  esc_html($cwp_article_title_font). '"' . ", sans-serif !important; }
 
 		";
 
@@ -1110,7 +1110,7 @@ function book_rev_lite_php_style() {
 
 			.article-container.post #wrap-up .proscons li
 
-			{ font-family: " . '"' .  $cwp_article_content_font . '"' . ", sans-serif !important; }
+			{ font-family: " . '"' .  esc_html($cwp_article_content_font) . '"' . ", sans-serif !important; }
 
 		";
 
@@ -1178,7 +1178,7 @@ function book_rev_lite_php_style() {
 
 		.article-container.post > header .article-details .date
 
-		{ font-family: " . '"' .  $cwp_meta_info_font . '"' . ", sans-serif !important; }
+		{ font-family: " . '"' .  esc_html($cwp_meta_info_font) . '"' . ", sans-serif !important; }
 
 	";
 	

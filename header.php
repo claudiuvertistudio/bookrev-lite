@@ -146,7 +146,7 @@
 
                             if($sl_href != "") {
 
-                                echo "<li><a href=". $sl_href ."><i class='fa " . $social_link[1] . "'></i></a></li>";
+                                echo "<li><a href=". esc_url($sl_href) ."><i class='fa " . esc_html($social_link[1]) . "'></i></a></li>";
 
                             }                            
 
