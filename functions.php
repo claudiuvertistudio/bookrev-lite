@@ -2,7 +2,7 @@
 
 
 
-if ( ! isset( $content_width ) ) $content_width = 1250;
+if ( ! isset( $content_width ) ) $content_width = 812;
 
 
 
