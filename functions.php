@@ -211,30 +211,30 @@ if(!function_exists('book_rev_lite_load_req_scripts')) {
 
 		// Register and enqueue jQuery Superfish Plugin.
 
-		wp_enqueue_script( 'book-rev-lite-superfish-js', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ) );
+		wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ) );
 
 
 
 		// Register and enqueue jQuery Cycle Plugin.
 
-		wp_enqueue_script( 'book-rev-lite-jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', array( 'jquery' ) );
 
 
 
 		// Register and enqueue jQuery Cycle Plugin.
 
-		wp_enqueue_script( 'book-rev-lite-modernizr', get_template_directory_uri() . '/js/modernizr.js', array( 'jquery' ) );
+		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array( 'jquery' ) );
 
 
 
 		// Load the main JavaScript file.
 
-		wp_enqueue_script( 'book-rev-lite-main-js', get_template_directory_uri() . '/js/master.js', array( 'jquery', "book-rev-lite-jquery-cycle" ));
+		wp_enqueue_script( 'book-rev-lite-main-js', get_template_directory_uri() . '/js/master.js', array( 'jquery', "jquery-cycle" ));
 
 
 		// Load html5.js only on IE.
-		wp_enqueue_script( 'book-rev-lite-html5', get_template_directory_uri() . '/js/html5.js');
-		wp_script_add_data( 'book-rev-lite-html5', 'conditional', 'IE' );
+		wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5.js');
+		wp_script_add_data( 'html5shiv', 'conditional', 'IE' );
 
 
 		// Load the css framework.
@@ -265,27 +265,9 @@ if(!function_exists('book_rev_lite_load_req_scripts')) {
 
 		// Load FontAwesome Icon Pack.
 
-		wp_enqueue_style( 'book-rev-lite-icons-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css');
+		wp_enqueue_style( '<font-></font->awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
 
 	}
-
-}
-
-
-
-// Sanitize hexadecimal input
-
-if(!function_exists('book_rev_lite_sanitize_hex')) {
-
-	function book_rev_lite_sanitize_hex($hex) {
-
-		if($hex === "") return '';
-
-		if(preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $hex)) return $hex;
-
-		return null;
-
-	}	
 
 }
 
@@ -613,7 +595,7 @@ if(!function_exists("book_rev_lite_excerpt_filter")) {
 
 	function book_rev_lite_excerpt_filter() {
 
-		return '...';
+		return '&hellip;';
 
 	}
 
