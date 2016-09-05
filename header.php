@@ -22,16 +22,6 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php } ?>
 
-    
-
-    <?php if(get_theme_mod("favicon-image") !== "") { ?>
-
-		<?php $faviconimage = get_theme_mod("favicon-image"); ?>
-
-        <link rel="shortcut icon" href="<?php echo esc_url($faviconimage); ?>">
-
-    <?php } ?>
-
 <?php wp_head(); ?>
 
 </head>

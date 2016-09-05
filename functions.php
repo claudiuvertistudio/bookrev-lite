@@ -410,6 +410,22 @@ function book_rev_lite_excerpt_length($length) {
 add_filter('excerpt_length', 'book_rev_lite_excerpt_length');
 
 
+// Migrate favicon from theme favicon to core
+
+function bookrev_migrate_favicon(){
+	if ( function_exists( 'wp_site_icon' ) ) {
+		if ( get_theme_mod('favicon-image') ) {
+			$id = attachment_url_to_postid( get_theme_mod('favicon-image') );
+			if ( is_int( $id ) ) {
+				update_option( 'site_icon', $id );
+			}
+			remove_theme_mod( 'favicon-image' );
+		}
+	}
+}
+
+add_action( 'after_setup_theme', 'bookrev_migrate_favicon' );
+
 
 // Display Review Grade
 
