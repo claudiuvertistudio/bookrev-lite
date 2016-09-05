@@ -10,8 +10,6 @@
 
             <?php 
 
-                include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
                 $noPosts = get_theme_mod('mp_lab_count');
 
                 $cat = get_theme_mod('mp_lab_cat');
