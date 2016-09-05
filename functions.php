@@ -16,6 +16,11 @@ if(!function_exists('book_rev_lite_theme_setup')) {
 
 		// Takes care of the <title> tag.
 		add_theme_support('title-tag');
+ 
+ 
+
+		// Add theme support for custom logo.
+		add_theme_support( 'custom-logo' );
 
 
 
@@ -425,6 +430,21 @@ function bookrev_migrate_favicon(){
 }
 
 add_action( 'after_setup_theme', 'bookrev_migrate_favicon' );
+
+
+// Migrate logo from theme to core
+
+function bookrev_migrate_logo(){
+	if ( get_theme_mod('header-logo') ) {
+		$logo = attachment_url_to_postid( get_theme_mod( 'header-logo' ) );
+		if ( is_int( $logo ) ) {
+			set_theme_mod( 'custom_logo', $logo );
+		}
+		remove_theme_mod( 'header-logo' );
+	}
+}
+
+add_action( 'after_setup_theme', 'bookrev_migrate_logo' );
 
 
 // Display Review Grade
@@ -878,13 +898,13 @@ function book_rev_lite_php_style() {
 
 	// Set header logo.
 
-	$cwp_wpc_header_logo = get_theme_mod("header-logo");
+	$cwp_wpc_header_logo = wp_get_attachment_image_url( get_theme_mod( 'custom_logo') );
 
 	$cwp_wpc_header_logo_width = get_theme_mod("logo-width");
 
 	$cwp_wpc_header_logo_height = get_theme_mod("logo-height");
 
-	if( !empty($cwp_wpc_header_logo) ) {
+	if( has_custom_logo() ) {
 
 		echo "#inner-header .logo { background:url('" .  $cwp_wpc_header_logo . "') no-repeat; width: " . $cwp_wpc_header_logo_width . "px !important; height: " . $cwp_wpc_header_logo_height . "px !important;}";
 

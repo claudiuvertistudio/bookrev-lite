@@ -1044,46 +1044,6 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		/**
 
-		 *  Header Logo Upload
-
-		 */
-
-		
-
-			// Header Logo Setting
-
-			$wpc->add_setting('header-logo',array('sanitize_callback' => 'esc_url_raw'));
-
-
-
-			// Header Logo Control
-
-			$wpc->add_control(
-
-				new WP_Customize_Image_Control(
-
-					$wpc,
-
-					'header-logo',
-
-					array(
-
-						'label'		=> __("Logo", "book-rev-lite"),
-
-						'section'	=> "wpc_header_section",
-
-						'settings'	=> 'header-logo'
-
-					)
-
-				)
-
-			);
-
-
-
-		/**
-
 		 *  Logo Width Setting & Control
 
 		 */
