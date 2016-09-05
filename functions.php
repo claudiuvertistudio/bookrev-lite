@@ -227,6 +227,10 @@ if(!function_exists('book_rev_lite_load_req_scripts')) {
 		wp_enqueue_script( 'book-rev-lite-main-js', get_template_directory_uri() . '/js/master.js', array( 'jquery', "book-rev-lite-jquery-cycle" ));
 
 
+		// Load html5.js only on IE.
+		wp_enqueue_script( 'book-rev-lite-html5', get_template_directory_uri() . '/js/html5.js');
+		wp_script_add_data( 'book-rev-lite-html5', 'conditional', 'IE' );
+
 
 		// Load the css framework.
 

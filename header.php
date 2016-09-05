@@ -13,21 +13,8 @@
     <!-- Meta Tags -->
 
     <meta http-equiv="Content-Type" content="text/html" charset="<?php bloginfo( 'charset' ); ?>">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-
-    <!-- HTML5 SHIV -->
-
-    <!--[if IE]>
-
-        <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-
-    <![endif]-->
-
-    <!-- END HTML5 SHIV -->
-
-
-
-    <!-- Pingback and Profile -->
 
     <link rel="profile" href="http://gmpg.org/xfn/11" />
 
