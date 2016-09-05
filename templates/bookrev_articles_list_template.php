@@ -1,13 +1,13 @@
 <?php while( have_posts() ) : the_post(); ?>
 
-    <article class="clearfix" id="post-<?php echo $post->ID; ?>">
+    <article class="clearfix" id="post-<?php the_ID(); ?>">
 
         <div class="feat-img">
 
-            <a href="<?php echo get_permalink($post->ID); ?>">
+            <a href="<?php echo get_permalink(); ?>">
 				<?php 
-				if ( has_post_thumbnail($post->ID) ) { // check if the post has a Post Thumbnail assigned to it.
-					the_post_thumbnail($post->ID,'single-post-thumbnail');
+				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+					the_post_thumbnail('single-post-thumbnail');
 				} 
 				else {
 					$def = get_theme_mod('default-article-image-upload');
@@ -26,7 +26,7 @@
 
             </div><!-- end .comment-count -->
 
-            <?php $grade = book_rev_lite_get_review_grade($post->ID); ?>
+            <?php $grade = book_rev_lite_get_review_grade(get_the_ID()); ?>
 
             <span class="grade <?php echo book_rev_lite_display_review_class($grade); ?>"> <?php if(!empty($grade)) book_rev_lite_display_review_grade($grade); ?> </span>
 
@@ -36,7 +36,7 @@
 
             <header>
 
-                <a href="<?php echo get_permalink($post->ID); ?>" class="title"><?php echo the_title(); ?></a>
+                <a href="<?php echo get_permalink(); ?>" class="title"><?php echo the_title(); ?></a>
 
                 <div class="meta">
 
@@ -48,7 +48,7 @@
 
             </header>
 
-            <p> <?php book_rev_lite_get_limited_content($post->ID, 440, '&hellip;'); ?> </p>
+            <p> <?php book_rev_lite_get_limited_content(get_the_ID() , 440, '&hellip;'); ?> </p>
 
         </div><!-- end .content -->
 

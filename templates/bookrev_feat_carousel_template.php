@@ -38,8 +38,8 @@
 
 		                    <a href="<?php echo get_permalink(get_the_ID()); ?>">
 								<?php 
-								if ( has_post_thumbnail($post->ID) ) { // check if the post has a Post Thumbnail assigned to it.
-									the_post_thumbnail($post->ID,'single-post-thumbnail');
+								if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+									the_post_thumbnail('single-post-thumbnail');
 								} 
 								else {
 									$def = get_theme_mod('default-article-image-upload');
@@ -70,7 +70,7 @@
 
 		                    <header>
 
-		                        <a href="<?php echo get_permalink(get_the_ID()); ?>" class="title"><h3><?php the_title(); ?></h3></a>
+		                        <a href="<?php echo get_permalink(); ?>" class="title"><h3><?php the_title(); ?></h3></a>
 
 		                        <div class="meta">
 
@@ -84,7 +84,7 @@
 
 		                    <div class="content">
 
-		                        <p><?php book_rev_lite_get_limited_content($post->ID, 550, '&hellip;'); ?></p>
+		                        <p><?php book_rev_lite_get_limited_content(get_the_ID(), 550, '&hellip;'); ?></p>
 
 		                    </div><!-- end .content -->
 

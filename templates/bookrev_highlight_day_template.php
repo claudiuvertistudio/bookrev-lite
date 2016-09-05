@@ -27,8 +27,8 @@
                 <div class="featured-image">
 
                     <?php 
-					if ( has_post_thumbnail($post->ID) ) { // check if the post has a Post Thumbnail assigned to it.
-						the_post_thumbnail($post->ID,'single-post-thumbnail');
+					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+						the_post_thumbnail('single-post-thumbnail');
 					} 
 					else {
 						$def = get_theme_mod('default-article-image-upload');

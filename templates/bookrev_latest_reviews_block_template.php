@@ -52,11 +52,11 @@
 
                         <?php foreach($posts as $post) : setup_postdata($post); ?>
 
-                        <li class="article-link <?php if($i==0) echo "active"; ?>" id="<?php echo $post->ID; ?>">
+                        <li class="article-link <?php if($i==0) echo "active"; ?>" id="<?php the_ID(); ?>">
 
                             <h2 class="article-title">
 
-                                <a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title(); ?></a>
+                                <a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a>
 
                             </h2><!-- end .article-title -->
 
@@ -98,11 +98,11 @@
 
                     
 
-                    <div class="article-content <?php if($i==0) echo "active"; ?>" id="<?php echo $post->ID; ?>">
+                    <div class="article-content <?php if($i==0) echo "active"; ?>" id="<?php the_ID(); ?>">
 
                         <header>
 
-                            <h3 class="article-title"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo the_title(); ?></a></h3>
+                            <h3 class="article-title"><a href="<?php echo get_permalink(); ?>"><?php echo the_title(); ?></a></h3>
 
                             <div class="a-details">
 
@@ -114,7 +114,7 @@
 
                         </header>
 
-                            <div class="article-text clearfix"> <?php book_rev_lite_get_limited_content($post->ID, 850, '&hellip;'); ?> </div><!-- end .article-text -->
+                            <div class="article-text clearfix"> <?php book_rev_lite_get_limited_content(get_the_ID(), 850, '&hellip;'); ?> </div><!-- end .article-text -->
 
                     </div><!-- end .article-content -->
 
