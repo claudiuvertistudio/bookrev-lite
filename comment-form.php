@@ -38,7 +38,7 @@
 
         'fields' => $default_fields,
 
-        'comment_field' => "<textarea id='comment-content' name='comment' aria-required='true' placeholder='" . __("Your Message&hellip;", "book-rev-lite") . "'></textarea>"
+        'comment_field' => "<textarea id='comment-content' name='comment' aria-required='true' placeholder='" . __("Your Message...;", "book-rev-lite") . "'></textarea>"
 
     );
 

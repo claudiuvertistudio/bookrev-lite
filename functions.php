@@ -595,7 +595,7 @@ if(!function_exists("book_rev_lite_excerpt_filter")) {
 
 	function book_rev_lite_excerpt_filter() {
 
-		return '&hellip;';
+		return '...';
 
 	}
 

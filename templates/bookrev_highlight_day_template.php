@@ -66,7 +66,7 @@
 
 
 
-                <p><?php book_rev_lite_get_limited_content(get_the_id(), 450, '&hellip;'); ?></p>
+                <p><?php book_rev_lite_get_limited_content(get_the_id(), 450, '...'); ?></p>
 
             </div><!-- end .highlight-inner -->
 

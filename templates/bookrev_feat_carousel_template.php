@@ -84,7 +84,7 @@
 
 		                    <div class="content">
 
-		                        <p><?php book_rev_lite_get_limited_content(get_the_ID(), 550, '&hellip;'); ?></p>
+		                        <p><?php book_rev_lite_get_limited_content(get_the_ID(), 550, '...'); ?></p>
 
 		                    </div><!-- end .content -->
 

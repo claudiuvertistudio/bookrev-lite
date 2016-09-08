@@ -67,7 +67,7 @@ $args = array('cat'   => $cat);
 
                         <div class="sd-body">
 
-                            <p><?php book_rev_lite_get_limited_content(get_the_ID(), 450, '&hellip;'); ?></p>
+                            <p><?php book_rev_lite_get_limited_content(get_the_ID(), 450, '...'); ?></p>
 
                         </div><!-- end .sd-body -->
 

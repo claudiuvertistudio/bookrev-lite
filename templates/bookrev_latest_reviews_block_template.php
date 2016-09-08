@@ -112,7 +112,7 @@
 
                         </header>
 
-                            <div class="article-text clearfix"> <?php book_rev_lite_get_limited_content(get_the_ID(), 850, '&hellip;'); ?> </div><!-- end .article-text -->
+                            <div class="article-text clearfix"> <?php book_rev_lite_get_limited_content(get_the_ID(), 850, '...'); ?> </div><!-- end .article-text -->
 
                     </div><!-- end .article-content -->
 

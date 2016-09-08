@@ -48,7 +48,7 @@
 
             </header>
 
-            <p> <?php book_rev_lite_get_limited_content(get_the_ID() , 440, '&hellip;'); ?> </p>
+            <p> <?php book_rev_lite_get_limited_content(get_the_ID() , 440, '...'); ?> </p>
 
         </div><!-- end .content -->
 
