@@ -13,42 +13,14 @@
     <!-- Meta Tags -->
 
     <meta http-equiv="Content-Type" content="text/html" charset="<?php bloginfo( 'charset' ); ?>">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <meta name="description" content="<?php bloginfo('description'); ?>">
-
-    <title><?php wp_title(); ?></title>
-
-    
-
-  
-
-    <!-- HTML5 SHIV -->
-
-    <!--[if IE]>
-
-        <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-
-    <![endif]-->
-
-    <!-- END HTML5 SHIV -->
-
-
-
-    <!-- Pingback and Profile -->
 
     <link rel="profile" href="http://gmpg.org/xfn/11" />
 
+<?php if ( is_singular() && pings_open( get_queried_object() ) ) { ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-    
-
-    <?php if(get_theme_mod("favicon-image") !== "") { ?>
-
-		<?php $faviconimage = get_theme_mod("favicon-image"); ?>
-
-        <link rel="shortcut icon" href="<?php echo esc_url($faviconimage); ?>">
-
-    <?php } ?>
+<?php } ?>
 
 <?php wp_head(); ?>
 
@@ -174,7 +146,7 @@
 
                             if($sl_href != "") {
 
-                                echo "<li><a href=". $sl_href ."><i class='fa " . $social_link[1] . "'></i></a></li>";
+                                echo "<li><a href=". esc_url($sl_href) ."><i class='fa " . esc_html($social_link[1]) . "'></i></a></li>";
 
                             }                            
 
