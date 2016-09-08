@@ -882,9 +882,9 @@ function book_rev_lite_php_style() {
 
 	$cwp_wpc_header_logo = wp_get_attachment_image_url( get_theme_mod( 'custom_logo') );
 
-	$cwp_wpc_header_logo_width = get_theme_mod("logo-width");
+	$cwp_wpc_header_logo_width = get_theme_mod("logo-width",'176');
 
-	$cwp_wpc_header_logo_height = get_theme_mod("logo-height");
+	$cwp_wpc_header_logo_height = get_theme_mod("logo-height",'56');
 
 	if( has_custom_logo() ) {
 
