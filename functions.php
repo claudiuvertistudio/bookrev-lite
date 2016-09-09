@@ -265,7 +265,7 @@ if(!function_exists('book_rev_lite_load_req_scripts')) {
 
 		// Load FontAwesome Icon Pack.
 
-		wp_enqueue_style( '<font-></font->awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
 
 	}
 
