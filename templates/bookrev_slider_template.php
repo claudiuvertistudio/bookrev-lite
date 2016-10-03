@@ -77,7 +77,7 @@ $args = array('cat'   => $cat);
 
                             <span class="sd-comments">
 
-                                <a href="<?php echo get_comments_link(get_the_ID()); ?>"><i class="fa fa-comments"></i> <?php comments_number(__("No Comments", "book-rev-lite"), __("1 Comment", "book_rev_lite"), __("% Comments", "book_rev_lite")); ?></a>
+                                <a href="<?php echo get_comments_link(get_the_ID()); ?>"><i class="fa fa-comments"></i> <?php comments_number(__("No Comments", "book-rev-lite"), __("1 Comment", "book-rev-lite"), __("% Comments", "book-rev-lite")); ?></a>
 
                             </span><!-- end .sd-comments -->
 

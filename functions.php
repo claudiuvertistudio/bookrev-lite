@@ -99,17 +99,7 @@ function book_rev_lite_required_plugins() {
 
 			'required' 	=> false,
 
-		),
-
-		array(
-
-			'name' 		=> 'Tweet Old Post',
-
-			'slug' 		=> 'tweet-old-post',
-
-			'required' 	=> false,
-
-		),
+		)
 
 		
 
@@ -553,7 +543,7 @@ if(!function_exists('book_rev_lite_filter_default_title')) {
 
 	function book_rev_lite_filter_default_title($title) {
 
-		if($title == "") { $title = __("Default Title", "cwp"); }
+		if($title == "") { $title = __("Default Title", "book-rev-lite"); }
 
 		return $title;
 
