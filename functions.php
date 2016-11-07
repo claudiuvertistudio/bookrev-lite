@@ -554,33 +554,6 @@ if(!function_exists('book_rev_lite_filter_default_title')) {
 
 
 
-
-/**
-
- * Custom numeric pagination.
-
- */
-
-if(!function_exists('book_rev_lite_numeric_pagination')) {
-
-	function book_rev_lite_numeric_pagination() {
-
-		$links = paginate_links( array( 'type' => 'array','prev_text' => '«', 'next_text' => '»' ) );
-		
-		
-		if( !empty($links) ):
-			echo '<nav id="pagination"><ul>';
-			foreach( $links as $link ){
-				echo '<li>'. $link . '</li>';
-			};
-			echo '</ul></nav>';
-		endif;
-	}	
-
-}
-
-
-
 if(!function_exists("book_rev_lite_excerpt_filter")) {
 
 	function book_rev_lite_excerpt_filter() {

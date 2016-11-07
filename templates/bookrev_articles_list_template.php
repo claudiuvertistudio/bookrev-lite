@@ -56,6 +56,10 @@
 
 
 
-<?php  endwhile; 
+<?php  endwhile;
 
-book_rev_lite_numeric_pagination(); ?>
+    the_posts_pagination( array(
+        'prev_text'          => __( '&#171;', 'book-rev-lite' ),
+        'next_text'          => __( '&#187;', 'book-rev-lite' ),
+        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'book-rev-lite' ) . ' </span>',
+    ) ); ?>
