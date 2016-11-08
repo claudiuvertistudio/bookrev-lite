@@ -3,8 +3,8 @@
  * Customizer info main class.
  *
  * @package WordPress
- * @subpackage Hestia
- * @since Hestia 1.0
+ * @subpackage Book Rev Lite
+ * @since Book Rev Lite 1.7.3
  */
 
 /**
