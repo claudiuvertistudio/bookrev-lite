@@ -1189,10 +1189,16 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 
 			// Slider Category Setting & Control 
-
+			$default_cat = get_categories();
+			$def = 0;
+			if ( !empty( $default_cat ) ) {
+				if ( !empty( $default_cat[0]->cat_ID ) ) {
+					$def = $default_cat[0]->cat_ID;
+				}
+			}
 			$wpc->add_setting('mp_slider_cat',
 
-				array('default' => '','sanitize_callback' => 'book_rev_lite_sanitize_dropdown')
+				array('default' => (int)$def, 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown')
 
 			);
 
@@ -2318,8 +2324,11 @@ function book_rev_lite_sanitize_number( $input ) {
 function book_rev_lite_sanitize_dropdown( $input ) {
 	$output_categories = array();
 	$categories = get_categories();
-	foreach($categories as $category) {
-		array_push ($output_categories, $category->cat_ID);
+
+	if( !empty( $categories ) ) {
+		foreach ( $categories as $category ) {
+			array_push( $output_categories, $category->cat_ID );
+		}
 	}
 	if(in_array($input, $output_categories)){
 		return $input;

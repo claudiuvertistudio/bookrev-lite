@@ -2,14 +2,14 @@
 
 $default_cat = get_categories();
 
-
-
-$cat = get_theme_mod('mp_slider_cat',$default_cat[0]->cat_ID) ;
-if(!is_numeric($cat)){
-    $cat = 0;
+$cat = 0;
+if( !empty($default_cat) ) {
+    if ( ! empty( $default_cat[0]->cat_ID ) ) {
+        $cat = get_theme_mod( 'mp_slider_cat', $default_cat[0]->cat_ID );
+    }
 }
 
-$args = array('cat' =>  (int)$cat); ?>
+$args = array('cat' => (int)$cat); ?>
 
 
 
