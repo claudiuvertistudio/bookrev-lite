@@ -1094,7 +1094,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			// Display Slider Setting & Control 
 
-			$wpc->add_setting('mp_display_slider', array('sanitize_callback' => 'book_rev_lite_sanitize_checkbox'));
+			$wpc->add_setting('mp_display_slider', array('default' => true, 'sanitize_callback' => 'book_rev_lite_sanitize_checkbox'));
 
 			$wpc->add_control(
 
