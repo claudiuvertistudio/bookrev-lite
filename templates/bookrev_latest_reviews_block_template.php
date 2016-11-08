@@ -54,7 +54,7 @@
 
                             <h2 class="article-title">
 
-                                <a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a>
 
                             </h2><!-- end .article-title -->
 
@@ -100,7 +100,7 @@
 
                         <header>
 
-                            <h3 class="article-title"><a href="<?php echo get_permalink(); ?>"><?php echo the_title(); ?></a></h3>
+                            <h3 class="article-title"><a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a></h3>
 
                             <div class="a-details">
 

@@ -51,8 +51,9 @@
 
 
                 <div class="article-details">
-
-                    <h2 class="title"><a href="<?php echo get_permalink(get_the_ID()); ?>"><?php the_title(); ?></a></h2>
+                    <?php
+                    $book_rev_lite_link = get_permalink(get_the_ID());?>
+                    <h2 class="title"><a href="<?php echo esc_url($book_rev_lite_link); ?>"><?php the_title(); ?></a></h2>
 
                     <div class="meta">
 

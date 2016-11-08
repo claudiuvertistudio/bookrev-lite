@@ -1,8 +1,11 @@
+            <?php
+            $book_rev_lite_link = get_permalink(get_the_ID());
+            ?>
             <article class="clearfix">
 
                 <div class="feat-img">
 
-                    <a href="<?php echo get_permalink(get_the_ID()); ?>">
+                    <a href="<?php echo esc_url($book_rev_lite_link); ?>">
 
                         <?php 
 						if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
@@ -36,7 +39,7 @@
 
                     <header>
 
-                        <a href="<?php echo get_permalink(get_the_ID()); ?>" class="title"><?php echo the_title(); ?></a>
+                        <a href="<?php echo esc_url($book_rev_lite_link); ?>" class="title"><?php echo the_title(); ?></a>
 
                         <div class="meta">
 

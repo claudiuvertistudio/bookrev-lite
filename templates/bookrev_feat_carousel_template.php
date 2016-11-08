@@ -28,7 +28,9 @@
 
 				if($query->have_posts()):
 
-					while($query->have_posts()): $query->the_post(); ?>
+					while($query->have_posts()): $query->the_post();
+
+						$book_rev_lite_link = get_permalink(get_the_ID()); ?>
 
 
 
@@ -36,7 +38,7 @@
 
 		                <div class="feat-img">
 
-		                    <a href="<?php echo get_permalink(get_the_ID()); ?>">
+		                    <a href="<?php echo esc_url($book_rev_lite_link); ?>">
 								<?php 
 								if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 									the_post_thumbnail('single-post-thumbnail');
@@ -70,7 +72,7 @@
 
 		                    <header>
 
-		                        <a href="<?php echo get_permalink(); ?>" class="title"><h3><?php the_title(); ?></h3></a>
+		                        <a href="<?php echo esc_url($book_rev_lite_link); ?>" class="title"><h3><?php the_title(); ?></h3></a>
 
 		                        <div class="meta">
 

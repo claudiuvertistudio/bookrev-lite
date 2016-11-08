@@ -4,7 +4,7 @@
 
         <div class="feat-img">
 
-            <a href="<?php echo get_permalink(); ?>">
+            <a href="<?php the_permalink(); ?>">
 				<?php 
 				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 					the_post_thumbnail('single-post-thumbnail');
@@ -36,7 +36,7 @@
 
             <header>
 
-                <a href="<?php echo get_permalink(); ?>" class="title"><?php echo the_title(); ?></a>
+                <a href="<?php the_permalink(); ?>" class="title"><?php echo the_title(); ?></a>
 
                 <div class="meta">
 
@@ -56,6 +56,10 @@
 
 
 
-<?php  endwhile; 
+<?php  endwhile;
 
-book_rev_lite_numeric_pagination(); ?>
+    the_posts_pagination( array(
+        'prev_text'          => __( '&#171;', 'book-rev-lite' ),
+        'next_text'          => __( '&#187;', 'book-rev-lite' ),
+        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'book-rev-lite' ) . ' </span>',
+    ) ); ?>
