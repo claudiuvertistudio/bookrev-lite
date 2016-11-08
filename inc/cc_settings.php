@@ -6,6 +6,27 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 	function book_rev_lite_theme_customizer($wpc) {
 
+		/*********************************/
+		/*********  Theme Info  **********/
+		/*********************************/
+		require_once ( 'class/class-bookrev-info.php');
+
+		$wpc->add_section('bookrev_theme_info', array(
+				'title' => __('Theme info', 'book-rev-lite'),
+				'priority' => 0,
+			)
+		);
+		$wpc->add_setting('bookrev_theme_info', array(
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'book_rev_lite_sanitize_text'
+			)
+		);
+		$wpc->add_control( new Bookrev_Info( $wpc, 'bookrev_theme_info', array(
+				'section' => 'bookrev_theme_info',
+				'priority' => 10
+			) )
+		);
+
 		// Load the custom Customizer Controls
 
 		require_once( get_template_directory() . '/inc/cc_controls.php' );
@@ -2340,13 +2361,3 @@ function book_rev_lite_customize_preview_js() {
 }
 
 add_action( 'customize_preview_init', 'book_rev_lite_customize_preview_js' );
-
-function book_rev_lite_registers() {
-
-	wp_register_script( 'book_rev_lite_customizer_script', get_template_directory_uri() . '/js/bookrev_lite_customizer.js', array("jquery"), '20120206', true  );
-
-	wp_enqueue_script( 'book_rev_lite_customizer_script' );
-
-}
-
-add_action( 'customize_controls_enqueue_scripts', 'book_rev_lite_registers' );
