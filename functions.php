@@ -53,6 +53,7 @@ if(!function_exists('book_rev_lite_theme_setup')) {
 
 		require_once(get_template_directory() . "/inc/cc_settings.php");
 
+		require_once(get_template_directory() . '/inc/customizer-info/class/class-singleton-customizer-info-section.php' );
 		
 
 	}	
@@ -582,9 +583,8 @@ if(!function_exists("book_rev_lite_excerpt_filter")) {
 	    function book_rev_lite_wpr_get_title() {
 
 	        if(function_exists('cwppos_show_review')) {
-
-	            return get_post_meta(get_the_ID(), "cwp_rev_product_name", true);
-
+				$product_name = get_post_meta(get_the_ID(), "cwp_rev_product_name", true);
+	            return esc_html($product_name);
 	        }
 
 	    }

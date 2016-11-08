@@ -5,10 +5,11 @@ $default_cat = get_categories();
 
 
 $cat = get_theme_mod('mp_slider_cat',$default_cat[0]->cat_ID) ;
+if(!is_numeric($cat)){
+    $cat = 0;
+}
 
-$args = array('cat'   => $cat);
-
-?>
+$args = array('cat' =>  (int)$cat); ?>
 
 
 
@@ -22,7 +23,9 @@ $args = array('cat'   => $cat);
 
 			while ($query->have_posts()) :
 
-				$query->the_post(); ?>
+				$query->the_post();
+
+                $book_rev_lite_link = get_permalink(get_the_ID()); ?>
 
             <div class="slide clearfix" id="slide-<?php echo get_the_ID(); ?>">
 
@@ -30,10 +33,11 @@ $args = array('cat'   => $cat);
 
 					<?php
 					$book_rev_lite_wpr_get_product_image = book_rev_lite_wpr_get_product_image();
+
 					if( !empty($book_rev_lite_wpr_get_product_image) ) {
-						echo ' <a href="'.get_permalink(get_the_ID()).'">';
-							echo '<img src="'.$book_rev_lite_wpr_get_product_image.'">';
-						echo '</a>';	
+						echo ' <a href="'.esc_url($book_rev_lite_link).'">';
+							echo '<img src="'.esc_url($book_rev_lite_wpr_get_product_image).'">';
+						echo '</a>';
 					}
 					?>
 
@@ -49,7 +53,7 @@ $args = array('cat'   => $cat);
 
                             <div class="tsh-left">
 
-                            <h2 class="sd-title"><a href="<?php echo get_permalink(get_the_ID()); ?>"><?php echo get_the_title(); ?></a></h2>
+                            <h2 class="sd-title"><a href="<?php echo esc_url($book_rev_lite_link); ?>"><?php echo get_the_title(); ?></a></h2>
 
                             </div><!-- end .tsh-left -->
 
@@ -89,9 +93,7 @@ $args = array('cat'   => $cat);
 
                             </span><!-- end .sd-author -->
 
-
-
-                            <a class="read-more" href="<?php echo get_permalink(get_the_ID()); ?>"><?php _e("Read More", "book-rev-lite"); ?></a>
+                            <a class="read-more" href="<?php echo esc_url($book_rev_lite_link); ?>"><?php _e("Read More", "book-rev-lite"); ?></a>
 
                         </div><!-- end .sd-meta -->
 

@@ -92,14 +92,6 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			);
 
 
-		class Book_Rev_Lite_Featured_Review extends WP_Customize_Control
-		{
-			public function render_content()
-			{
-				_e('Check out the <a href="https://themeisle.com/themes/bookrev/">PRO version</a> to be able to use this widget!',"book-rev-lite");
-			}
-
-		} 	
 		class Book_Rev_Lite_Full_Width extends WP_Customize_Control
 		{
 			public function render_content()
@@ -109,85 +101,18 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		} 		
 			
-		/* BookRev Featured Reviews widget */	
-		$wpc->add_section(
 
-			'feauted_review_widget_section',
 
-			array(
-
-					'title'			=> __("BookRev Featured Reviews widget", "book-rev-lite"),
-
-					'description'	=> __("This widget displays the latest reviews from a specific category.", "book-rev-lite"),
-
-					'priority'		=> 2
-
-				)
-
-		);
 		
-		$wpc->add_setting(
-			'feauted_review_widget',array('sanitize_callback' => 'bookrev_lite_sanitize_notes')
-		);
+		/* Full width page template */
 		
-		$wpc->add_control( new Book_Rev_Lite_Featured_Review( $wpc, 'feauted_review_widget',
-			array(
-				'section' => 'feauted_review_widget_section',
-		   )
+		$wpc->add_setting( 'full_width_page',array(
+			'sanitize_callback' => 'book_rev_lite_sanitize_text'
 		));
 		
-		/* BookRev Latest comments widget */	
-		$wpc->add_section(
-
-			'latest_comments_widget_section',
-
-			array(
-
-					'title'			=> __("BookRev Latest Comments widget", "book-rev-lite"),
-
-					'description'	=> __("This widget displays the latest comments.", "book-rev-lite"),
-
-					'priority'		=> 3
-
-				)
-
-		);
-		
-		$wpc->add_setting(
-			'latest_comments_widget',array('sanitize_callback' => 'bookrev_lite_sanitize_notes')
-		);
-		
-		$wpc->add_control( new Book_Rev_Lite_Featured_Review( $wpc, 'latest_comments_widget',
-			array(
-				'section' => 'latest_comments_widget_section',
-		   )
-		));
-		
-		/* Full width page template */	
-		
-		$wpc->add_section(
-
-			'full_width_page_section',
-
-			array(
-
-					'title'			=> __("Full width template page", "book-rev-lite"),
-
-					'priority'		=> 4
-
-				)
-
-		);
-		
-		$wpc->add_setting(
-			'full_width_page',array('sanitize_callback' => 'bookrev_lite_sanitize_notes')
-		);
-		
-		$wpc->add_control( new Book_Rev_Lite_Full_Width( $wpc, 'full_width_page',
-			array(
-				'section' => 'full_width_page_section',
-		   )
-		));
+		$wpc->add_control( new Book_Rev_Lite_Full_Width( $wpc, 'full_width_page', array(
+			'section' => 'general_settings_section',
+		)));
 
 		/* Add the social section */
 
@@ -2299,7 +2224,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		$wpc->add_setting( 'article-title-font', array(
 
-			'default'	=> 'Arvo', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
+			'default'	=> 'Arvo', 'sanitize_callback' => 'book_rev_lite_sanitize_fonts'
 
 			));
 
@@ -2317,7 +2242,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		$wpc->add_setting( 'article-content-font', array(
 
-			'default'	=> 'Titillium Web', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
+			'default'	=> 'Titillium Web', 'sanitize_callback' => 'book_rev_lite_sanitize_fonts'
 
 			));
 
@@ -2334,7 +2259,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		$wpc->add_setting( 'meta-info-font', array(
 
-			'default'	=> 'Titillium Web', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
+			'default'	=> 'Titillium Web', 'sanitize_callback' => 'book_rev_lite_sanitize_fonts'
 
 			));
 
@@ -2353,15 +2278,10 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 }
 
-function bookrev_lite_sanitize_notes( $input ) {
-
-    return $input;
-
-}
 
 function book_rev_lite_sanitize_checkbox( $input ) {
 
-	return $input;
+	return ( isset( $input ) && true == $input ? true : false );
 	
 }
 function book_rev_lite_sanitize_text( $input ) {
@@ -2375,16 +2295,38 @@ function book_rev_lite_sanitize_number( $input ) {
 	
 }
 function book_rev_lite_sanitize_dropdown( $input ) {
-
-	return $input;
-	
+	$output_categories = array();
+	$categories = get_categories();
+	foreach($categories as $category) {
+		array_push ($output_categories, $category->cat_ID);
+	}
+	if(in_array($input, $output_categories)){
+		return $input;
+	}
+	return 0;
 }
-function book_rev_lite_sanitize_radio( $input ) {
 
-	return $input;
+function book_rev_lite_sanitize_radio( $input, $setting ) {
+	global $wp_customize;
+
+	$control = $wp_customize->get_control( $setting->id );
+
+	if ( array_key_exists( $input, $control->choices ) ) {
+		return $input;
+	} else {
+		return $setting->default;
+	}
 
 }
 
+
+function book_rev_lite_sanitize_fonts( $input ) {
+	$fonts_array = array( 'Open Sans', 'Roboto', 'Oswald', 'Lato', 'Roboto Condensed', 'Source Sans Pro', 'PT Sans', 'Open Sans Condensed', 'Droid Sans', 'Raleway', 'Droid Serif', 'Ubuntu', 'Slabo 27px', 'Montserrat', 'PT Sans Narrow', 'Roboto Slab', 'Arimo', 'Lora', 'Bitter', 'Yanone Kaffeesatz', 'Oxygen', 'Merriweather', 'Lobster', 'Arvo', 'PT Serif', 'Indie Flower', 'Noto Sans', 'Titillium Web', 'Dosis', 'Fjalla One', 'Francois One', 'Cabin', 'Poiret One', 'Abel', 'Playfair Display', 'Signika', 'Vollkorn', 'Ubuntu Condensed', 'Shadows Into Light', 'Play', 'Muli', 'Nunito', 'Bree Serif', 'Cuprum', 'Archivo Narrow', 'Libre Baskerville', 'Anton', 'Alegreya', 'Maven Pro', 'Rokkitt' );
+	if(in_array($input, $fonts_array)){
+		return $input;
+	}
+	return 'Arvo';
+}
 /**
 
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
