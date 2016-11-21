@@ -722,7 +722,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 					'title'			=> __("Header Settings", "book-rev-lite"),
 
-					'description'	=> __("Customize the header of your website by changing the background color of the header or menu. Also set up your logo and choose whether to display the header advertisment banner (468x61) or not. , ", "book-rev-lite"),
+					'description'	=> __("Customize the header of your website by changing the background color of the header or menu. Also set up your logo and choose whether to display the header advertisement banner (468x61) or not. , ", "book-rev-lite"),
 
 					'priority'		=> 35
 
@@ -750,7 +750,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 					'type'		=> 'checkbox',
 
-					'label'		=> __("Display Advertisment", "book-rev-lite"),
+					'label'		=> __("Display Advertisement", "book-rev-lite"),
 
 					'section'	=> 'wpc_header_section',
 
@@ -866,19 +866,19 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		/**
 
-		 *  Header Advertisment Banner Image Upload
+		 *  Header Advertisement Banner Image Upload
 
 		 */
 
 		
 
-			// Header Advertisment Banner Image Setting
+			// Header Advertisement Banner Image Setting
 
 			$wpc->add_setting('header-ad-img', array('sanitize_callback' => 'esc_url_raw'));
 
 
 
-			// Header Advertisment Banner Image Control
+			// Header Advertisement Banner Image Control
 
 			$wpc->add_control(
 
@@ -890,7 +890,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 					array(
 
-						'label'		=> __("Advertisment Banner Image", "book-rev-lite"),
+						'label'		=> __("Advertisement Banner Image", "book-rev-lite"),
 
 						'section'	=> "wpc_header_section",
 
@@ -908,11 +908,11 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		/**
 
-		 *  Header Advertisment URL Setting & Control
+		 *  Header Advertisement URL Setting & Control
 
 		 */
 
-			// Header Advertisment URL Setting
+			// Header Advertisement URL Setting
 
 			$wpc->add_setting(
 
@@ -922,7 +922,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 
 
-			// Header Advertisment URL Control
+			// Header Advertisement URL Control
 
 			$wpc->add_control(
 
@@ -930,7 +930,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			    array(
 
-			        'label' 	=> __('Advertisment Banner URL', 'book-rev-lite'),
+			        'label' 	=> __('Advertisement Banner URL', 'book-rev-lite'),
 
 			        'section' 	=> 'wpc_header_section',
 
@@ -946,11 +946,11 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		/**
 
-		 *  Header Advertisment Alt Setting & Control
+		 *  Header Advertisement Alt Setting & Control
 
 		 */
 
-			// Header Advertisment Alt Setting
+			// Header Advertisement Alt Setting
 
 			$wpc->add_setting(
 
@@ -958,7 +958,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			    array(
 
-			        'default' => __("This is the default advertisment banner that comes with the theme. You can change it using the WordPress Customizer.", "book-rev-lite"),'sanitize_callback' => 'book_rev_lite_sanitize_text'
+			        'default' => __("This is the default advertisement banner that comes with the theme. You can change it using the WordPress Customizer.", "book-rev-lite"),'sanitize_callback' => 'book_rev_lite_sanitize_text'
 
 			    )
 
@@ -966,7 +966,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 
 
-			// Header Advertisment Alt Control
+			// Header Advertisement Alt Control
 
 			$wpc->add_control(
 
@@ -974,7 +974,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			    array(
 
-			        'label' 	=> __('Advertisment Banner Description', 'book-rev-lite'),
+			        'label' 	=> __('Advertisement Banner Description', 'book-rev-lite'),
 
 			        'section' 	=> 'wpc_header_section',
 
